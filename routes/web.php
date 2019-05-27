@@ -49,11 +49,11 @@ Route::middleware(['auth'])->group(function () {
 
 
      Route::get('/admin/keluarga', 'keluargaController@index')->name('admin.keluarga.index');  //routing lihat daftar mahasiswa
-    Route::post('/admin/keluarga', 'kekuargaController@store')->name('admin.keluarga.store'); //routing simpan data mahasiswa baru
+    Route::post('/admin/keluarga', 'keluargaController@store')->name('admin.keluarga.store'); //routing simpan data mahasiswa baru
     Route::get('/admin/keluarga/create', 'keluargaController@create')->name('admin.keluarga.create'); //routing tampilkan form data mahasiswa baru
     Route::delete('/admin/keluarga/{mahasiswa}', 'keluargaController@destroy')->name('admin.keluarga.destroy'); //routing hapus data mahasiswa baru
     Route::patch('/admin/keluarga/{mahasiswa}', 'keluargaController@update')->name('admin.keluarga.update'); //routing simpan perubahan data mahasiswa
-    Route::get('/admin/keluarga/{mahasiswa}', 'keluargaontroller@show')->name('admin.keluarga.show'); //routing tampilkan detail mahasiswa
+    Route::get('/admin/keluarga/{mahasiswa}', 'keluargaController@show')->name('admin.keluarga.show'); //routing tampilkan detail mahasiswa
     Route::get('/admin/keluarga/{mahasiswa}/edit', 'keluargaController@edit')->name('admin.keluarga.edit');  //routing tampilkan form edit mahasiswa
 
 
@@ -66,6 +66,7 @@ Route::middleware(['auth'])->group(function () {
     Route::patch('/admin/penelitian/{penelitian}', 'PenelitianController@update')->name('admin.penelitian.update'); //routing simpan perubahan data mahasiswa
     Route::get('/admin/penelitian/{penelitian}', 'PenelitianController@show')->name('admin.penelitian.show'); //routing tampilkan detail mahasiswa
     Route::get('/admin/penelitian/{penelitian}/edit', 'PenelitianController@edit')->name('admin.penelitian.edit');  //routing tampilkan form edit mahasiswa
+    Route::post('/admin/penelitian/{penelitian}', 'PenelitianController@show')->name('admin.penelitian.show'); 
 
     Route::post('/admin/penelitian-user/create', 'PenelitianUserController@store')->name('admin.penelitian-user.store'); //form tambah anggota
     Route::get('/admin/penelitian-user/create/{penelitian}', 'PenelitianUserController@create')->name('admin.penelitian-user.create'); //form tambah anggota
